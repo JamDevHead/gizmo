@@ -14,7 +14,7 @@ declare interface GizmoClass<T extends (...args: Array<any>) => void> {
 	create: (...args: Parameters<T>) => GizmoClass<T>;
 	disable(): void;
 	draw: (...args: Parameters<T>) => void;
-	styleDraw: (style: Style, ...args: Parameters<T>) => void;
+	styleDraw: (style: Partial<Style>, ...args: Parameters<T>) => void;
 	enable(): void;
 	update(...args: Parameters<T>): void;
 

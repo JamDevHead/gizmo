@@ -367,6 +367,12 @@ local function createGizmo<T...>(render: (Style, T...) -> ())
 
 	function class.styleDraw(style: Style, ...: T...)
 		if active then
+			for key, value in globalStyle do
+				if style[key] ~= nil then
+					style[key] = value
+				end
+			end
+
 			render(style, ...)
 		end
 	end
