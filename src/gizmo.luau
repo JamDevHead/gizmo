@@ -365,6 +365,12 @@ local function createGizmo<T...>(render: (Style, T...) -> ())
 		end
 	end
 
+	function class.styleDraw(style: Style, ...: T...)
+		if active then
+			render(style, ...)
+		end
+	end
+
 	type Object = typeof(setmetatable({} :: Gizmo, class))
 
 	function class.create(...: T...): Object
